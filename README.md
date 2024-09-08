@@ -47,6 +47,23 @@ mysql : [mysql download](https://dev.mysql.com/doc/mysql-getting-started/en/)
      - ![](/image/img6.png)
         password : vm1masteradmin  
 
-**ติดตั้ง Ubuntu เสร็จสิ้น**
+**ติดตั้ง Ubuntu เสร็จสิ้นให้ทำการ update package ต่างๆ**
+```
+sudo apt-get update && sudo apt-get upgrade
+```
+### จากนั้น Setting Network เพื่อใช้ ssh
+```
+sudo apt install net-tools
+
+ifconfig 
+```
+![](/image/img7.png)
+ดู ip : 192.168.1.107 เพื่อนำมา ssh ด้วยคำสั่ง  
+เปิด cmd
+```
+ssh vm1master@192.168.1.107
+```
+password : vm1masteradmin
 ## Install Software VM 1  
 ### Install Jenkins
+[Jenkins Install](https://www.jenkins.io/doc/book/installing/linux/)
