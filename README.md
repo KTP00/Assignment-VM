@@ -106,6 +106,14 @@ Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; vendor preset: ena
 Active: active (running) since Tue 2018-11-13 16:19:01 +03; 4min 57s ago
 ```
 เช็คเวอร์ชั่น : `jenkins --version`  
+### ทดสอบ start Jenkins
+```
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+```
+เข้า browser : `http://192.168.1.107:8080`
+![](/image/img8.png)
+
 
 **เสร็จสิ้น VM 1 (Master)**
 ## Install Software VM 2
