@@ -46,7 +46,7 @@ mysql : [mysql download](https://dev.mysql.com/doc/mysql-getting-started/en/)
 - run vm1 ขึ้นมาแล้วทำการติดตั้ง OS (ติดตั้ง ssh ด้วย)  
      - ![](/image/img6.png)
         password : vm1masteradmin  
-
+**Setting VM Network : Bridged Adapter**
 **ติดตั้ง Ubuntu เสร็จสิ้นให้ทำการ update package ต่างๆ**
 ```
 sudo apt-get update && sudo apt-get upgrade
@@ -151,6 +151,10 @@ https://git-scm.com/download/linux
     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     sudo apt-get update
     ```
+1. Install docker-compose
+    ```
+    sudo apt install docker-compose
+    ```
 1. Install the Docker packages.
     ```
     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
@@ -170,6 +174,11 @@ systemctl status mysql
 systemctl start mysql
 systemctl stop mysql
 systemctl restart mysql
+```
+วิธีเข้า mysql
+```
+sudo systemctl start mysql.service
+sudo mysql
 ```
 ### Install Robot Framework
 [Robot Framework Install](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installing-python-on-linux)
@@ -193,6 +202,10 @@ systemctl restart mysql
     ```
     python3 -m venv .venv
     source .venv/bin/activate
+    ```
+    วิธีออกจาก env
+    ```
+    deactivate
     ```
 1. ติดตั้ง Robot Framework
     ```
@@ -234,7 +247,10 @@ https://git-scm.com/download/linux
     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     sudo apt-get update
+ 1. Install docker-compose
     ```
+    sudo apt install docker-compose
+    ```   ```
 1. Install the Docker packages.
     ```
     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
