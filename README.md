@@ -213,7 +213,7 @@ sudo mysql
 
     robot --version
     ```
-**เสร็จสิ้น VM 3 (Pre-Prod)**
+**เสร็จสิ้น VM 2 (Test)**
 ### ติดตั้ง OS ใน VM 3 ให้เรียบร้อย
 ## Install Software VM 3 
 - username : vm3
