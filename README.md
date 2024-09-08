@@ -12,7 +12,7 @@ robot --version
 jmeter --version
 mysql --version
 ```
-## Install Local
+## Install Local Machine
 Python : [Python download](https://www.python.org/downloads/)
 
 flask
@@ -46,7 +46,7 @@ mysql : [mysql download](https://dev.mysql.com/doc/mysql-getting-started/en/)
 - run vm1 ขึ้นมาแล้วทำการติดตั้ง OS (ติดตั้ง ssh ด้วย)  
      - ![](/image/img6.png)
         password : vm1masteradmin  
-
+**Setting VM Network : Bridged Adapter**
 **ติดตั้ง Ubuntu เสร็จสิ้นให้ทำการ update package ต่างๆ**
 ```
 sudo apt-get update && sudo apt-get upgrade
@@ -111,9 +111,163 @@ Active: active (running) since Tue 2018-11-13 16:19:01 +03; 4min 57s ago
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
 ```
-เข้า browser : `http://192.168.1.107:8080`
+เข้า browser : `http://192.168.1.107:8080`  
+
 ![](/image/img8.png)
 
 
 **เสร็จสิ้น VM 1 (Master)**
-## Install Software VM 2
+### ติดตั้ง OS ใน VM 2 ให้เรียบร้อย
+## Install Software VM 2 
+- username : vm2test
+- password : vm2testadmin
+```
+ssh vm2test@192.168.1.111
+```
+**ติดตั้ง Ubuntu เสร็จสิ้นให้ทำการ update package ต่างๆ**
+```
+sudo apt-get update && sudo apt-get upgrade
+```
+### Install Git
+[Git Install](https://git-scm.com/download/linux)
+```
+https://git-scm.com/download/linux
+```
+### Install Docker & Compose
+[Docker & Compose Install](https://docs.docker.com/engine/install/ubuntu/)
+1. Set up Docker's apt repository.
+    ```
+    # Add Docker's official GPG key:
+    sudo apt-get update
+    sudo apt-get install ca-certificates curl
+    sudo install -m 0755 -d /etc/apt/keyrings
+    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+    # Add the repository to Apt sources:
+    echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo apt-get update
+    ```
+1. Install docker-compose
+    ```
+    sudo apt install docker-compose
+    ```
+1. Install the Docker packages.
+    ```
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    ```
+1. Verify that the Docker Engine installation is successful by running the hello-world image.
+    ```
+    sudo docker run hello-world
+    ```
+### Install MySQL
+[MySQL Install](https://dev.mysql.com/doc/refman/8.4/en/linux-installation-apt-repo.html)
+```
+sudo apt-get install mysql-server
+```
+The MySQL server is started automatically after installation. You can check the status of the MySQL server with the following command:
+```
+systemctl status mysql
+systemctl start mysql
+systemctl stop mysql
+systemctl restart mysql
+```
+วิธีเข้า mysql
+```
+sudo systemctl start mysql.service
+sudo mysql
+```
+### Install Robot Framework
+[Robot Framework Install](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installing-python-on-linux)
+1. check version python and pip
+    ```
+    python --version
+    python3 --version
+    pip --version
+    ```
+    หากไม่ได้ติดตั้ง ให้ใช้คำสั่งนี้ในการติดตั้ง
+    ```
+    sudo apt install python3
+
+    sudo apt install python3-pip
+    ```
+    ติดตั้ง Environment Python
+    ```
+    sudo apt install python3-venv -y
+    ```
+1. ตั้งค่า Environment Python
+    ```
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
+    วิธีออกจาก env
+    ```
+    deactivate
+    ```
+1. ติดตั้ง Robot Framework
+    ```
+    pip install robotframework
+
+    robot --version
+    ```
+**เสร็จสิ้น VM 3 (Pre-Prod)**
+### ติดตั้ง OS ใน VM 3 ให้เรียบร้อย
+## Install Software VM 3 
+- username : vm3
+- password : vm3admin
+```
+ssh vm3@192.168.1.112
+```
+**ติดตั้ง Ubuntu เสร็จสิ้นให้ทำการ update package ต่างๆ**
+```
+sudo apt-get update && sudo apt-get upgrade
+```
+### Install Git
+[Git Install](https://git-scm.com/download/linux)
+```
+https://git-scm.com/download/linux
+```
+### Install Docker & Compose
+[Docker & Compose Install](https://docs.docker.com/engine/install/ubuntu/)
+1. Set up Docker's apt repository.
+    ```
+    # Add Docker's official GPG key:
+    sudo apt-get update
+    sudo apt-get install ca-certificates curl
+    sudo install -m 0755 -d /etc/apt/keyrings
+    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+    # Add the repository to Apt sources:
+    echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo apt-get update
+ 1. Install docker-compose
+    ```
+    sudo apt install docker-compose
+    ```   ```
+1. Install the Docker packages.
+    ```
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    ```
+1. Verify that the Docker Engine installation is successful by running the hello-world image.
+    ```
+    sudo docker run hello-world
+    ```
+### Install MySQL
+[MySQL Install](https://dev.mysql.com/doc/refman/8.4/en/linux-installation-apt-repo.html)
+```
+sudo apt-get install mysql-server
+```
+The MySQL server is started automatically after installation. You can check the status of the MySQL server with the following command:
+```
+systemctl status mysql
+systemctl start mysql
+systemctl stop mysql
+systemctl restart mysql
+```
