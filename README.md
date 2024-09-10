@@ -36,14 +36,21 @@ jmeter : [jmeter download](https://jmeter.apache.org/download_jmeter.cgi)
 
 mysql : [mysql download](https://dev.mysql.com/doc/mysql-getting-started/en/)
 
+## Download VirtualBox and Ubuntu Server Image
+[VirtualBox Link](https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html)  
+[Ubuntu Server Image Link](https://ubuntu.com/download/server)
+
 ## Create VM 1 (Master)
 - เข้า VirtualBox
 - กด New
     - ![](/image/img2.png)
     - ![](/image/img3.png)
     - ![](/image/img4.png)
-    - ![](/image/img5.png)
-**Setting VM Network จาก NAT เป็น : Bridged Adapter**
+    - ![](/image/img5.png)  
+    
+- **Setting VM Network จาก NAT เป็น : Bridged Adapter**  
+    ในหน้า Network Configuration จะปรากฎ IP ที่ DHCP แจกให้กับ VM ของเราสามารถใช้ IP นี้ในการ ssh ได้เลย หรือจะดูด้วยคำสั่ง ifconfig ก็ได้
+    - ![](/image/img9.png)
 - run vm1 ขึ้นมาแล้วทำการติดตั้ง OS (ติดตั้ง ssh ด้วย)  
      - ![](/image/img6.png)
         password : vm1masteradmin  
