@@ -36,6 +36,10 @@ jmeter : [jmeter download](https://jmeter.apache.org/download_jmeter.cgi)
 
 mysql : [mysql download](https://dev.mysql.com/doc/mysql-getting-started/en/)
 
+## Download VirtualBox and Ubuntu Server Image
+[VirtualBox Link](https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html)  
+[Ubuntu Server Image Link](https://ubuntu.com/download/server)
+
 ## Create VM 1 (Master)
 - เข้า VirtualBox
 - กด New
