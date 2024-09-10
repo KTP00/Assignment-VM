@@ -43,10 +43,10 @@ mysql : [mysql download](https://dev.mysql.com/doc/mysql-getting-started/en/)
     - ![](/image/img3.png)
     - ![](/image/img4.png)
     - ![](/image/img5.png)
+**Setting VM Network จาก NAT เป็น : Bridged Adapter**
 - run vm1 ขึ้นมาแล้วทำการติดตั้ง OS (ติดตั้ง ssh ด้วย)  
      - ![](/image/img6.png)
         password : vm1masteradmin  
-**Setting VM Network : Bridged Adapter**
 **ติดตั้ง Ubuntu เสร็จสิ้นให้ทำการ update package ต่างๆ**
 ```
 sudo apt-get update && sudo apt-get upgrade
