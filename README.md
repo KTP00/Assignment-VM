@@ -166,6 +166,13 @@ https://git-scm.com/download/linux
     ```
     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
     ```
+1. start, stop, status, restart docker service
+    ```
+    sudo systemctl start docker
+    sudo systemctl stop docker
+    sudo systemctl status docker
+    sudo systemctl restart docker
+    ```
 1. Verify that the Docker Engine installation is successful by running the hello-world image.
     ```
     sudo docker run hello-world
