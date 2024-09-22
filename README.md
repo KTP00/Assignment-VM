@@ -224,6 +224,9 @@ sudo mysql
 1. ติดตั้ง Robot Framework
     ```
     pip install robotframework
+    pip install robotframework-seleniumlibrary
+    pip3 install robotframework-requests
+    pip3 install robotframework-sshlibrary
 
     robot --version
     ```
